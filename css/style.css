@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@500&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.container:first-child {
+  text-align: center;
+}
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 4px;
+}
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Стили для инпутов */
+.name-inp,
+.phone-inp,
+.img-link-inp {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 2px solid black;
+  border-radius: 4px;
+  width: 200px;
+  box-sizing: border-box;
+}
+
+/* Стили для кнопки */
+.btn-add-contact {
+  padding: 10px 15px;
+  background-color: rgb(133, 117, 252);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 150px;
+}
+.form h1 {
+  font-family: Smooch Sans;
+  font-weight: 500;
+  font-size: 48px;
+  color: #2f9fd3;
+}
+.form button:hover {
+  background-color: rgb(79, 3, 243);
+}
+
+.card-container {
+  display: flex; /* Используем flexbox для родительского контейнера */
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку, если не хватает места по ширине */
+  justify-content: space-around; /* Распределение пространства между карточками */
+}
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 200px;
+  height: 240px;
+  text-align: center;
+  background-image: url(https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA5L3Jhd3BpeGVsb2ZmaWNlMTVfdGhpY2tfcGFpbnRfc3Ryb2tlX29uX2NhbnZhc19ibHVlXzVmNzBjOWQxLTRjOTktNDMwYy1hMGIxLTk0OTMxNzBlYTM0N18xLmpwZw.jpg);
+}
+
+.card img {
+  max-width: 150px;
+  height: 150px;
+  margin-bottom: 8px;
+  border: 2px solid rgb(0, 72, 255);
+  border-radius: 10%;
+}
+
+.card button {
+  margin-top: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #ddd;
+  border: none;
+  border-radius: 4px;
+  color: #333;
+  font-size: 14px;
+}
+
+.card button:hover {
+  background-color: #ccc;
+}
+.nameSpan {
+  font-weight: bold;
+  color: rgb(0, 174, 255);
+  display: block;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.phoneSpan {
+  font-weight: bolder;
+  color: rgb(0, 174, 255);
+  display: block;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+/* Стилизация кнопок Delete и Edit */
+.card .btn-delete,
+.card .btn-edit {
+  background-color: #5f47ff; /* Цвет фона */
+  color: white; /* Цвет текста */
+  padding: 8px 16px; /* Отступы внутри кнопки */
+  border: none; /* Убрать границы */
+  border-radius: 4px; /* Радиус границы */
+  cursor: pointer; /* Изменение курсора при наведении */
+  margin: 5px; /* Отступы между кнопками */
+  font-family: Smooch Sans;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.card .btn-delete:hover,
+.card .btn-edit:hover {
+  background-color: #2f9fd3; /* Изменение цвета фона при наведении */
+}
+
+/* Стили для модального окна */
+.main-modal {
+  position: fixed; /* Фиксированное положение, чтобы модальное окно оставалось на месте при прокрутке */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+  display: none; /* По умолчанию скрываем модальное окно */
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-modal {
+  background-color: #fff; /* Цвет фона модального окна */
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px; /* Ширина модального окна */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Тень */
+}
+
+.close {
+  width: 100%; /* Установите необходимую ширину */
+  display: flex;
+  justify-content: flex-end; /* Выравнивание содержимого по правому краю */
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #aaa; /* Цвет кнопки закрытия */
+}
+.btn-close:hover {
+  color: #000; /* Цвет кнопки закрытия при наведении */
+}
+
+/* Стили для полей ввода и кнопки сохранения внутри модального окна */
+.inner-modal input[type="text"],
+.inner-modal button {
+  display: block;
+  width: calc(100% - 20px); /* Ширина поля ввода и кнопки сохранения */
+  margin: 10px auto; /* Отступы */
+  padding: 8px;
+  border: 1px solid #ccc; /* Граница */
+  border-radius: 4px;
+  box-sizing: border-box; /* Учитываем padding внутри элемента */
+}
+
+.inner-modal input[type="text"]:focus,
+.inner-modal button:focus {
+  outline: none; /* Убираем обводку при фокусе */
+}
+
+.inner-modal button {
+  background-color: #007bff; /* Цвет фона кнопки сохранения */
+  color: #fff; /* Цвет текста кнопки сохранения */
+  border: none;
+  cursor: pointer;
+}
+.inner-modal button:hover {
+  background-color: #0056b3; /* Цвет фона кнопки сохранения при наведении */
+}
